@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 22px;
+}
+h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+h4 {
+    margin-top: 0;
+    font-size: 16px;
+}
+h5 {
+    margin-top: 0;
+    font-size: 14px;
+}
+h6 {
+    margin-top: 0;
+    font-size: 12px;
+}
+code {
+    font-size: 1.2em;
+}
+ul {
+    padding-inline-start: 20px;
+}
+
+
+body {
+    font-family: sans-serif;
+    margin: 0 auto;
+}
+
+.square {
+    background: #7c7c7c;
+    border: 3px solid #525252;
+    border-radius: 6px;
+    float: left;
+    color: azure;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 50px;
+    height: 100px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding:0;
+    text-align: center;
+    width: 100px;
+}
+.square:hover, .movesButton:hover,.clearButton:hover {
+    filter: brightness(110%);
+}
+/*чутка для стилей для нажатия на кнопки*/
+.square:active, .movesButton:active, .clearButton:active {
+    filter: brightness(90%);
+}
+
+.board-row:after {
+    clear: both;
+    content: '';
+    display: table;
+}
+
+.status {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+.game {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.game-info{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container {
+    color: azure;
+    width: 699px;
+    height: 669px;
+    border-radius: 10px;
+    background: rgb(82, 82, 82);
+    font-weight: 800;
+    box-shadow:
+            rgba(0, 0, 0, 0.3) 0 19px 38px,
+            rgba(0, 0, 0, 0.22) 0 15px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movesButton{
+    border: none;
+    border-radius: 5px;
+    background-color: #fd9e0a;
+    color: azure;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+.clearButton{
+    border: none;
+    border-radius: 5px;
+    background-color: #fb9d0a;
+    color: azure;
+    width: 175px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.switch-btn {
+    display: inline-block;
+    width: 52px;
+    height: 30px;
+    border-radius: 14px;
+    background: #cdcbc7;
+    z-index: 0;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition-duration: 300ms;
+}
+.switch-btn::after {
+    content: '';
+    height: 23px;
+    width: 23px;
+    border-radius: 17px;
+    background: #fff;
+    top: 3px;
+    left: 3px;
+    transition-duration: 300ms;
+    position: absolute;
+}
+.switch-on {
+    background: #f99c0a;
+}
+.switch-on::after {
+    left: 24px;
+}
+.switch-off {
+    background-color: #c6c6c6;
+}
+
+.on-game .game{
+    background-color: #3c3636;
+}
+.on-game .container{
+    background-color:#cbc9c5 ;
+}
+.on-game .square{
+    background-color: #9b9996;
+    border-color:#cbc9c5 ;
+
+}
+.on-game .movesButton, .on-game .clearButton{
+    background-color: #c38247;
+}
+.on-game .container, .on-game .movesButton, .on-game .clearButton, .on-game .square{
+    color: #181817;
+}
+.word{
+    text-align: center;
+    margin-left: 30px;
+    padding: 0;
+}
+.contSwitch{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 40px;
+}
+@media (max-width: 768px) {
+    body {
+        margin: 0 auto;
+    }
+
+    .square {
+        font-size: 20px;
+        height: 80px;
+        width: 80px;
+        line-height: 40px;
+    }
+
+    .container {
+        width: 100%;
+        height: 70%;
+        padding: 20px;
+    }
+
+    .game-info {
+        padding: 10px;
+    }
+
+    .movesButton, .clearButton {
+        font-size: 18px;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .clearButton{
+        width: 80%;
+        margin-left: 40px;
+    }
+
+}
+
+@media (max-width: 510px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    .square {
+        font-size: 18px;
+        height: 40px;
+        width: 40px;
+        line-height: 30px;
+    }
+
+    .movesButton, .clearButton {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+}
