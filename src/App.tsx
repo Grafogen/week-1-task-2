@@ -12,16 +12,14 @@ import Login from "./pages/login-registration/Login";
 function App() {
 
     const [loggedIn, setLoggedIn] = useState(false);
-
     const isLoggedIn = () => {
         return localStorage.getItem('username') !== null && localStorage.getItem('password') !== null;
     };
 
     const handleLogin = (username: string, password: string) => {
-        // Сохранение данных в localStorage
         localStorage.setItem('username', username);
-        localStorage.setItem('password', password); // В реальном приложении лучше не сохранять пароль
-        setLoggedIn(true); // Обновляем состояние аутентификации
+        localStorage.setItem('password', password);
+        setLoggedIn(true);
     };
 
     useEffect(() => {
@@ -40,9 +38,10 @@ function App() {
         );
     }
 
+
     return (
         <div>
-            <Navbar/>
+            <Navbar setLoggedIn={setLoggedIn}/>
             <Routes>
                 <Route path="/login" element={<Navigate to="/"/>}/>
                 <Route path="/" element={<Game/>}/>

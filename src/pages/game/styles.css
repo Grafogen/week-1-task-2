@@ -4,6 +4,7 @@
 
 body {
     font-family: sans-serif;
+    background-color: #c6c6c6;
     padding: 0;
 }
 
@@ -240,7 +241,7 @@ body {
 
     .container {
         padding: 10px;
-        height: 50%;
+        height: 40%;
     }
 
 }

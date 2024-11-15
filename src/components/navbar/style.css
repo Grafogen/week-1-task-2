@@ -1,6 +1,6 @@
 .topbar {
     background-color: #515151;
-    padding: 10px 20px;
+    padding: 10px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,9 +32,6 @@
     margin-right: auto;
 }
 
-.topbar__username {
-    font-weight: bold;
-}
 
 .topbar__nav {
     margin-right: auto;
@@ -49,7 +46,8 @@
 .topbar__button {
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
+    font-weight: bold;
+    padding: 10px 5px;
     border-radius: 4px;
 
 }
@@ -60,10 +58,6 @@
 .topbar__menu a {
     color: white;
     text-decoration: none;
-}
-
-.topbar__menu a:hover {
-    text-decoration: underline;
 }
 
 .topbar__profile {
