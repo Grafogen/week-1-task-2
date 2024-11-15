@@ -1,0 +1,65 @@
+.topbar {
+    background-color: #282c34;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.topbar__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.topbar__user-info {
+    margin-right: auto;
+}
+
+.topbar__username {
+    font-weight: bold;
+}
+
+.topbar__nav {
+    margin-right: auto;
+}
+
+.topbar__menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar__menu li {
+    margin: 0 15px;
+}
+
+.topbar__menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.topbar__menu a:hover {
+    text-decoration: underline;
+}
+
+.topbar__profile {
+    display: flex;
+    align-items: center;
+}
+
+.topbar__profile-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.topbar__logout {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
