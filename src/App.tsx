@@ -1,15 +1,30 @@
 import React from 'react';
-import {Game} from "./game/Game";
+import {Game} from "./pages/game/Game";
 import {
+    Navigate,
     Route,
     Routes,
 } from "react-router-dom";
-import Navbar from "./navbar/Navbar";
+import Navbar from "./components/navbar/Navbar";
+import Login from "./pages/login-registration/Login";
 
 
 
 
 function App() {
+    let auth=false
+    if(!auth){
+        return (
+            <div>
+                <Routes>
+                    <Route path="/" element={<Navigate to="/login" />}/>
+                    <Route path="/registration" element={<Game/>}/>
+                    <Route path="/login" element={<Login onLogin={()=>{}}/>}></Route>
+                </Routes>
+            </div>
+        );
+    }
+
     return (
         <div>
             <Navbar/>

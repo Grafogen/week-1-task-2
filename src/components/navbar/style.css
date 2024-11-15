@@ -1,16 +1,31 @@
 .topbar {
-    background-color: #282c34;
+    background-color: #515151;
     padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+@media (min-width: 768px) {
+    .topbar {
+        position: static;
+        bottom: auto;
+
+    }
 }
 
 .topbar__container {
     display: flex;
     align-items: center;
     width: 100%;
+    font-size: 22px;
 }
 
 .topbar__user-info {
@@ -31,7 +46,13 @@
     margin: 0;
     padding: 0;
 }
+.topbar__button {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
 
+}
 .topbar__menu li {
     margin: 0 15px;
 }

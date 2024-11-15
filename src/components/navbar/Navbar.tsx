@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import LogoutIcon from '@mui/icons-material/Logout';
+import {NavLink} from "react-router-dom";
 //
 // interface TopBarProps {
 //     username: string;
@@ -12,12 +13,14 @@ const NavBar = () => {
         <div className="topbar">
             <div className="topbar__container">
                 <div className="topbar__user-info">
-                    <span className="topbar__username">user</span>
+                    <span className="topbar__username">
+                        <NavLink className="topbar__button" to="/profile">user</NavLink>
+                    </span>
                 </div>
                 <nav className="topbar__nav">
                     <ul className="topbar__menu">
-                        <li><a href="/game">Game</a></li>
-                        <li><a href="/leaderboard">Лидерборд</a></li>
+                        <li><NavLink className="topbar__button" to="/game">Game</NavLink></li>
+                        <li><NavLink className="topbar__button" to="/statistics">Statistics</NavLink></li>
                         {/* Добавьте другие страницы здесь */}
                     </ul>
                 </nav>
