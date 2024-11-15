@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles.module.css';
+import './styles.css';
 
 interface SquareProps {
     value: string | null;
