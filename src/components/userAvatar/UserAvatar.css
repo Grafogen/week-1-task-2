@@ -1,0 +1,13 @@
+.user-avatar {
+    width: 50px; /* Ширина круга */
+    height: 50px; /* Высота круга */
+    border-radius: 50%; /* Делает элемент кругом */
+    background-color: #bb76ff; /* Цвет фона */
+    color: white; /* Цвет текста */
+    display: flex; /* Центрируем содержимое */
+    justify-content: center; /* Горизонтальное выравнивание */
+    align-items: center; /* Вертикальное выравнивание */
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    text-align: center; /* Центрируем текст */
+}

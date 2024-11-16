@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Login from "./pages/login-registration/Login";
-import {AITicTacToe} from "./tic-tac-toe/ai-tic-tac-toe";
+import {AITicTacToe} from "./pages/tic-tac-toe/ai-tic-tac-toe";
+import Statistics from "./pages/stats/Statistics";
 
 
 function App() {
@@ -44,12 +45,10 @@ function App() {
         <div>
             <Navbar setLoggedIn={setLoggedIn}/>
             <Routes>
-                <Route path="/login" element={<Navigate to="/"/>}/>
+                <Route path="/login" element={<Navigate to="/ai"/>}/>
                 <Route path="/ai" element={<AITicTacToe/>}/>
-                <Route path="/" element={<Game/>}/>
-                <Route path="/game" element={<Game/>}/>
-                <Route path="/statistics" element={<div>Statistics</div>}/>
-                <Route path="/profile" element={<div>Profile</div>}/>
+                <Route path="/statistics" element={<Statistics/>}/>
+                <Route path="*" element={<Navigate to="/ai"/>}/>
             </Routes>
         </div>
     );

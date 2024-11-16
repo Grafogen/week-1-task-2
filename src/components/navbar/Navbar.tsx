@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import LogoutIcon from '@mui/icons-material/Logout';
 import {NavLink, useNavigate} from "react-router-dom";
+import UserAvatar from "../userAvatar/UserAvatar";
 
 
 
@@ -20,13 +21,13 @@ const NavBar: React.FC<{ setLoggedIn: (value: boolean) => void }> = ({ setLogged
         <div className="topbar">
             <div className="topbar__container">
                 <div className="topbar__user-info">
-                    <span className="topbar__username">
-                        <NavLink className="topbar__button" to="/profile">Profile</NavLink>
-                    </span>
+                    <div className="topbar__username">
+                        <NavLink className="topbar__button" to="/profile"><UserAvatar/></NavLink>
+                    </div>
                 </div>
                 <nav className="topbar__nav">
                     <ul className="topbar__menu">
-                        <li><NavLink className="topbar__button" to="/game">Game</NavLink></li>
+                        <li><NavLink className="topbar__button" to="/ai">Game</NavLink></li>
                         <li><NavLink className="topbar__button" to="/statistics">Statistics</NavLink></li>
                     </ul>
                 </nav>

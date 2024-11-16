@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState} from "react";
 import {Board} from "./board";
 import "./tic-tac-toe.css";
 import {getCleverMoves} from "./util";
@@ -33,10 +33,11 @@ export const AITicTacToe = () => {
         Array.from({length: 3}, () => null)
     );
     const [board, setBoard] = useState<BoardArray>(initialBoard);
+    const [points, setPoints]=useState(Number(localStorage.getItem('score')) | 0)
     const [player, setPlayer] = useState<string>("X");
     const [winner, setWinner] = useState<string | null>(null);
     const [isNoWinner, setIsNoWinner] = useState<boolean>(false);
-
+    localStorage.setItem('score',String(points))
     const handleOnClick = (row: number, col: number) => {
         if (board[row][col] || winner) {
             return;
@@ -49,7 +50,13 @@ export const AITicTacToe = () => {
         );
         setBoard(updatedPlayerBoard);
         const newWinner = checkWinner(updatedPlayerBoard);
+        console.log(newWinner)
+        if(newWinner === "X") {
+            setPoints(prevState => prevState + 1)
+        }
+
         setWinner(newWinner);
+
         setPlayer("X");
 
         // No Winner
@@ -81,6 +88,8 @@ export const AITicTacToe = () => {
                 );
                 setBoard(aiBoard);
                 setWinner(checkWinner(aiBoard));
+
+                console.log(winner)
             }, 200); // delay
         }
     };
@@ -96,9 +105,10 @@ export const AITicTacToe = () => {
         <div className='game'>
             <div className='board'>
                 <h1> Tic-Tac-Toe</h1>
+                <h1>Your score: {points}</h1>
                 <Board board={board} handleClick={handleOnClick}/>
-                {winner && <p>{winner === "X" ? "You Win" : "AI Wins"}</p>}
-                {isNoWinner && <p> No one wins</p>}
+                {winner  && <p className='p'>{winner === "X" ? "You Win" : "AI Wins"}</p>}
+                {isNoWinner && <p className='p'> No one wins</p>}
                 <button className='reset' type='button' onClick={() => restartGame()}>
                     Start new Game
                 </button>

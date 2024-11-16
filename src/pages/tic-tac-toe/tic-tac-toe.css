@@ -30,14 +30,14 @@ h1{
 @media (max-width:650px ) {
     .board{
         width: 499px;
-        height: 539px;
+        height: 569px;
     }
 }
 
 @media (max-width:505px ) {
     .board{
         width: 399px;
-        height: 539px;
+        height: 569px;
     }
     .cell {
         width: 60px;
@@ -84,7 +84,7 @@ h1{
 
 
 
-p {
+.p {
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 500;
