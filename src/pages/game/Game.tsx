@@ -28,6 +28,7 @@ function Board({ xIsNext, squares, onPlay }: BoardProps) {
         const nextSquares = squares.slice();
         nextSquares[i] = xIsNext ? 'X' : 'O';
         onPlay(nextSquares);
+        console.log(i, nextSquares)
     }
 
     const winner = calculateWinner(squares);

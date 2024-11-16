@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Login from "./pages/login-registration/Login";
+import {AITicTacToe} from "./tic-tac-toe/ai-tic-tac-toe";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
             <Navbar setLoggedIn={setLoggedIn}/>
             <Routes>
                 <Route path="/login" element={<Navigate to="/"/>}/>
+                <Route path="/ai" element={<AITicTacToe/>}/>
                 <Route path="/" element={<Game/>}/>
                 <Route path="/game" element={<Game/>}/>
                 <Route path="/statistics" element={<div>Statistics</div>}/>
