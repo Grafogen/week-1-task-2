@@ -1,0 +1,104 @@
+body {
+    font-family: sans-serif;
+    margin: 0 auto;
+}
+
+
+.game {
+/* Стили для контейнера игры */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h1{
+    font-size: 20px;
+}
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 599px;
+    height: 569px;
+    background: rgb(82, 82, 82);
+    border-radius: 10px;
+    gap: 10px;
+}
+@media (max-width:650px ) {
+    .board{
+        width: 499px;
+        height: 539px;
+    }
+}
+
+@media (max-width:505px ) {
+    .board{
+        width: 399px;
+        height: 539px;
+    }
+    .cell {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+.board_row {
+    display: flex;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border-radius: 0;
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 50px;
+    font-weight: 700;
+    margin-right: 10px;
+    background-color: #7b7b7b;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.cell:hover {
+    color: inherit; /* Цвет текста при наведении */
+}
+
+.cell_x {
+
+    color: white;
+}
+
+.cell_x:hover {
+    color: white; /* Цвет текста при наведении на X */
+}
+
+.cell_o {
+    color: #e8a341;
+}
+
+
+
+p {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 0;
+}
+
+.reset {
+    margin-top: 20px;
+    min-width: 200px;
+    width: 175px;
+    height: 35px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fb9d0a;
+    color: #181817;
+}
