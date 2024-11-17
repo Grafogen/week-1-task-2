@@ -13,6 +13,9 @@ const NavBar: React.FC<{ setLoggedIn: (value: boolean) => void }> = ({ setLogged
     const handleLogout = () => {
         localStorage.removeItem('username');
         localStorage.removeItem('password');
+        localStorage.removeItem('score');
+        localStorage.removeItem('aiScore');
+        localStorage.removeItem('noWinner');
         navigate('/login');
         setLoggedIn(false)
     };

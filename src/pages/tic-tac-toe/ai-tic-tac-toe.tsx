@@ -34,10 +34,18 @@ export const AITicTacToe = () => {
     );
     const [board, setBoard] = useState<BoardArray>(initialBoard);
     const [points, setPoints]=useState(Number(localStorage.getItem('score')) | 0)
+    const [aipoints, setAipoints]=useState(Number(localStorage.getItem('aiScore')) | 0)
+    const [noWinnerpoints, setNoWinnerpoints]=useState(Number(localStorage.getItem('noWinner')) | 0)
+
     const [player, setPlayer] = useState<string>("X");
     const [winner, setWinner] = useState<string | null>(null);
     const [isNoWinner, setIsNoWinner] = useState<boolean>(false);
+
     localStorage.setItem('score',String(points))
+    localStorage.setItem('aiScore',String(aipoints))
+    localStorage.setItem('noWinner',String(noWinnerpoints))
+
+
     const handleOnClick = (row: number, col: number) => {
         if (board[row][col] || winner) {
             return;
@@ -53,7 +61,11 @@ export const AITicTacToe = () => {
         console.log(newWinner)
         if(newWinner === "X") {
             setPoints(prevState => prevState + 1)
+            console.log(newWinner)
+        }else if (newWinner === "O") { // Теперь проверяем, если победил AI
+            setAipoints(prevState => prevState + 1);
         }
+
 
         setWinner(newWinner);
 
@@ -66,6 +78,7 @@ export const AITicTacToe = () => {
 
         if (!winner && !hasNullValue) {
             setIsNoWinner(true);
+            setNoWinnerpoints(prevState => prevState+1)
             return;
         }
 
@@ -87,8 +100,11 @@ export const AITicTacToe = () => {
                     )
                 );
                 setBoard(aiBoard);
+                const aiWinner = checkWinner(aiBoard);
                 setWinner(checkWinner(aiBoard));
-
+                if (aiWinner === "O") { // Если AI победил
+                    setAipoints(prevState => prevState + 1);
+                }
                 console.log(winner)
             }, 200); // delay
         }

@@ -35,6 +35,7 @@ function App() {
                     <Route path="/" element={<Navigate to="/login"/>}/>
                     <Route path="/registration" element={<Game/>}/>
                     <Route path="/login" element={<Login onLogin={handleLogin}/>}></Route>
+                    <Route path="*" element={<Navigate to="/login"/>}/>
                 </Routes>
             </div>
         );
