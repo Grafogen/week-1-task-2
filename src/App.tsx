@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {Game} from "./pages/game/Game";
 import {
     Navigate,
     Route,
@@ -33,7 +32,7 @@ function App() {
             <div>
                 <Routes>
                     <Route path="/" element={<Navigate to="/login"/>}/>
-                    <Route path="/registration" element={<Game/>}/>
+                    <Route path="/registration" element={<AITicTacToe/>}/>
                     <Route path="/login" element={<Login onLogin={handleLogin}/>}></Route>
                     <Route path="*" element={<Navigate to="/login"/>}/>
                 </Routes>

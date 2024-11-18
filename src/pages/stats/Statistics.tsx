@@ -20,7 +20,7 @@ const Statistics: React.FC = () => {
             <table>
                 <thead>
                 <tr>
-                    <th>Username</th>
+                    <th>Name</th>
                     <th>Кол-во побед</th>
                     <th>Кол-во поражений</th>
                     <th>Общее кол-во игр</th>

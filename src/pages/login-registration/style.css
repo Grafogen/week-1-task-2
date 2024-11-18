@@ -1,11 +1,14 @@
 .login-form {
-    max-width: 400px;
-    margin: 310px auto;
+    /* Максимальная ширина формы */
+    width: 40vh; /* Ширина формы относительно экрана */
+    margin: 20px auto; /* Центрирование по горизонтали и небольшой отступ сверху */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    top: 50%;
+    transform: translateY(60%);
 }
 
 .login-form h2 {
@@ -38,7 +41,7 @@ input:focus {
 .login-button {
     width: 100%;
     padding: 10px;
-    height: 50px;
+    height: 2em;
     background-color: #b3802c;
     color: white;
     border: none;
@@ -64,3 +67,12 @@ input:focus {
 .register-link a:hover {
     text-decoration: underline;
 }
+
+/*body, html {*/
+/*width: 100%;*/
+/*    !*margin: 0; !* Убираем отступы *!*!*/
+/*    !*display: flex; !* Используем flexbox для центрирования *!*!*/
+/*    !*justify-content: center; !* Центрирование по горизонтали *!*!*/
+/*    !*align-items: center; !* Центрирование по вертикали *!*!*/
+/*    !*background-color: #f0f0f0; !* Фоновый цвет *!*!*/
+/*}*/
